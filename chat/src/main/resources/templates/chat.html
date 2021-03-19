@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+</head>
+<body>
+
+<form action="#" method="post" th:action="@{'/chat'}" th:object="${message}">
+    <label for="messageText">Message Text:</label>
+    <input id="messageText" type="text" th:field="*{message}">
+    <label for="messageType">Message Type: </label>
+    <select id="messageType" th:field="*{mode}">
+        <option th:each="mode: ${allMessageTypes}" th:value="${mode}" th:text="${mode}"></option>
+<!--        <option th:value="'Say'" selected>Say</option>-->
+<!--        <option th:value="'Shout'">Shout</option>-->
+<!--        <option th:value="'Whisper'">Whisper</option>-->
+    </select>
+    <input type="submit">
+</form>
+<p>
+
+<table style="width:50%">
+    <tr th:each="chat: ${messages1}">
+        <td id="username" th:text="${chat.getUsername()}"/>
+        <th:block th:switch="${chat.getMode()}">
+            <td th:case="'Say'" th:text="${chat.getMessageText()}"></td>
+            <td th:case="'Shout'" th:text="${chat.getMessageText().toUpperCase()}"></td>
+            <td th:case="'Whisper'" th:text="${chat.getMessageText().toLowerCase()}"></td>
+        </th:block>
+    </tr>
+</table>
+</p>
+
+<p>
+    <a id="logout" href="/logout">Logout</a>
+</p>
+</body>
+</html>
