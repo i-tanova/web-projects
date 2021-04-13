@@ -1,0 +1,12 @@
+- Create a dog service that performs the following operations:
+    - [x]  retrieveDogBreed
+    - [x]  retrieveDogBreedById
+    - [x]  retrieveDogNames
+- Update the web controller using `@RestController` that handles requests for retrieving:
+    - [x]  a list of Dog breeds
+    - [x]  a list of Dog breeds by Id
+    - [x]  a list of Dog names
+- Make sure errors are handled appropriately.
+    - [x]  if an id is requested that doesn’t exist, appropriately handle the error
+- [x]  Create a data.sql file to create sample dog data in the database.
+- [ ]  Check that you are able to access your API.
