@@ -1,6 +1,7 @@
 package com.udacity.bootstrap.web;
 
 import com.udacity.bootstrap.entity.Dog;
+import com.udacity.bootstrap.service.DogNotFoundException;
 import com.udacity.bootstrap.service.DogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,12 +31,8 @@ public class DogController {
     @GetMapping("/dog/breed/{id}")
     public ResponseEntity<String> getDogBreedById(@PathVariable String id) {
         Long dogId = Long.parseLong(id);
-        try {
-            String breed = dogService.retrieveDogBreedById(dogId);
-            return new ResponseEntity(breed, HttpStatus.OK);
-        } catch (IllegalAccessException e) {
-            return new ResponseEntity(HttpStatus.NOT_FOUND);
-        }
+        String breed = dogService.retrieveDogBreedById(dogId);
+        return new ResponseEntity(breed, HttpStatus.OK);
     }
 
     @GetMapping("/dog/breed")

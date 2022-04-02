@@ -20,25 +20,18 @@ public class DogServiceImpl implements DogService {
     }
 
     @Override
-    public String retrieveDogBreedById(Long id) throws IllegalAccessException {
-        return dogRepository.findById(id).orElseThrow(IllegalAccessException::new).getBreed();
+    public String retrieveDogBreedById(Long id) {
+        Optional<String> optionalBreed = Optional.ofNullable(dogRepository.findBreedById(id));
+        return optionalBreed.orElseThrow(DogNotFoundException::new);
     }
 
     @Override
     public List<String> retrieveDogBreeds() {
-        List<String> breeds = new ArrayList<String>();
-        dogRepository.findAll().forEach(dog ->
-                breeds.add(dog.getBreed())
-        );
-        return breeds;
+        return dogRepository.findAllBreed();
     }
 
     @Override
     public List<String> retrieveDogNames() {
-        List<String> names = new ArrayList<String>();
-        dogRepository.findAll().forEach(dog ->
-                names.add(dog.getName())
-        );
-        return names;
+        return dogRepository.findAllName();
     }
 }

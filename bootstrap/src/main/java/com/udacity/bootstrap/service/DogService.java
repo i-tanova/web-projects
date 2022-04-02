@@ -7,7 +7,7 @@ import java.util.List;
 public interface DogService {
     List<Dog> retrieveDogs();
 
-    String retrieveDogBreedById(Long id) throws IllegalAccessException;
+    String retrieveDogBreedById(Long id);
 
     List<String> retrieveDogBreeds();
 
