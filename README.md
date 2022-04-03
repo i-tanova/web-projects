@@ -9,3 +9,5 @@ My random web projects
      - Location Contriller
      - @RestController, @Service, @Autowired
      - CRUD Repository - LocationRepository.java
+
+- graphql - GraphQL API that returns a list of dogs from an embedded H2 in memory database
