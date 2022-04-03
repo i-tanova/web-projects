@@ -1,0 +1,1 @@
+insert into location (id, name, address) values (1, 'Location1', 'address 1');
