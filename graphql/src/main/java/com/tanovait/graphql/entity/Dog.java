@@ -10,19 +10,21 @@ public class Dog {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String breed;
     private String name;
+    private String origin;
 
-    public Dog(Long id, String breed, String name) {
+    public Dog(Long id, String breed, String name, String origin) {
         this.id = id;
         this.breed = breed;
         this.name = name;
+        this.origin = origin;
     }
 
-    public Dog(String breed, String name) {
+    public Dog(String breed, String name, String origin) {
         this.breed = breed;
         this.name = name;
+        this.origin = origin;
     }
 
     public Dog() {
@@ -50,5 +52,13 @@ public class Dog {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
     }
 }
