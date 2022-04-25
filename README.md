@@ -14,4 +14,5 @@ My random web projects
      - Create schema with Query and Mutation
      - implement GraphQLQueryResolver and GraphQLMutationResolver
      - Return erros that extend GraphQLError
+- eureka-server - Eureka server running on port http://localhost:8761/
 
