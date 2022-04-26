@@ -14,5 +14,13 @@ My random web projects
      - Create schema with Query and Mutation
      - implement GraphQLQueryResolver and GraphQLMutationResolver
      - Return erros that extend GraphQLError
-- eureka-server - Eureka server running on port http://localhost:8761/
+- eureka-server - Eureka server running on port http://localhost:8761/ with microservice for dogs using Spring Data REST access at localhost:8080/dogs
+      - dependencies Eureka Server and Config Client
+      - add @EnableEurekaServer annotation
+      - application.properties
+      - module dogs - microservice for dogs using Spring Data REST
+      - dependencies Rest Repositories
+      - entity dog, crud repository dogs, data.sql file, application.properties
+
+
 
