@@ -21,6 +21,7 @@ My random web projects
       - module dogs - microservice for dogs using Spring Data REST
       - dependencies Rest Repositories
       - entity dog, crud repository dogs, data.sql file, application.properties
+      - register DogApplication as Eureka client
 
 
 
