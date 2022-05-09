@@ -22,6 +22,8 @@ My random web projects
       - dependencies Rest Repositories
       - entity dog, crud repository dogs, data.sql file, application.properties
       - register DogApplication as Eureka client
+      - Run: go to http://localhost:8761/ - Eureka service is running
+      - go to http://localhost:8762/dogs - Dogs microservice is running
 
 
 
